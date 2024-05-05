@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#score {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 18px;
+    margin-right: 10px;
+}
