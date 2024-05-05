@@ -17,11 +17,11 @@ player2Btn.addEventListener('click', () => {
 });
 
 function updateScore(player) {
-    scores[player]++;
-    scoreDisplay.textContent = Player 1: ${scores.player1} | Player 2: ${scores.player2};
+    scores.player++;
+    scoreDisplay.textContent = Player 1: scores.player1 || Player 2: scores.player2;
 
     if (scores[player] === targetScore) {
-        alert(${player} wins!);
+        alert(player wins!);
         resetGame();
     }
 }
@@ -29,5 +29,5 @@ function updateScore(player) {
 function resetGame() {
     scores.player1 = 0;
     scores.player2 = 0;
-    scoreDisplay.textContent = Player 1: ${scores.player1} | Player 2: ${scores.player2};
+    scoreDisplay.textContent = Player 1: scores.player1 || Player 2: scores.player2;
 }
