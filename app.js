@@ -1,33 +1,22 @@
-let scores = {
-    player1: 0,
-    player2: 0
-};
-const targetScore = 10;
+let playerScores = [0, 0];
+let targetScore = 0;
 
-const scoreDisplay = document.getElementById('score');
-const player1Btn = document.getElementById('player1Btn');
-const player2Btn = document.getElementById('player2Btn');
+function increaseScore(player) {
+  playerScores[player - 1]++;
+  document.getElementById(`player${player}`).innerHTML = `Player ${player}: ${playerScores[player - 1]}`;
+  
+  if (playerScores[player - 1] === targetScore) {
+    alert(`Player ${player} wins!`);
+  }
+}
 
-player1Btn.addEventListener('click', () => {
-    updateScore('player1');
-});
-
-player2Btn.addEventListener('click', () => {
-    updateScore('player2');
-});
-
-function updateScore(player) {
-    scores.player++;
-    scoreDisplay.textContent = Player 1: scores.player1 || Player 2: scores.player2;
-
-    if (scores[player] === targetScore) {
-        alert(player wins!);
-        resetGame();
-    }
+function setTarget() {
+  targetScore = parseInt(prompt('Enter the target score:'));
 }
 
 function resetGame() {
-    scores.player1 = 0;
-    scores.player2 = 0;
-    scoreDisplay.textContent = Player 1: scores.player1 || Player 2: scores.player2;
+  playerScores = [0, 0];
+  document.getElementById('player1').innerHTML = 'Player 1: 0';
+  document.getElementById('player2').innerHTML = 'Player 2: 0';
+  targetScore = 0;
 }

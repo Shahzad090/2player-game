@@ -7,11 +7,22 @@
     <script src="./css.style"></script>
 </head>
 <body>
-    <body>
-        <div id="score">Player 1: 0 | Player 2: 0</div>
-    <button id="player1Btn">Player 1 +</button>
-    <button id="player2Btn">Player 2 +</button>
-    
+    <div class="container">
+        <h1>2 Player Game</h1>
+        <div class="players">
+          <div class="player" id="player1">
+            <span>Player 1</span>
+            <button onclick="increaseScore(1)">Increase Score</button>
+          </div>
+          <div class="player" id="player2">
+            <span>Player 2</span>
+            <button onclick="increaseScore(2)">Increase Score</button>
+          </div>
+        </div>
+        <button onclick="setTarget()">Set Target</button>
+        <button onclick="resetGame()">Reset Game</button>
+      </div>
+      
     <script src="./app.js"></script>
 </body>
 </html>

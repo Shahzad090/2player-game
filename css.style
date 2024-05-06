@@ -1,13 +1,36 @@
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
-#score {
-    font-size: 24px;
-    margin-bottom: 20px;
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.players {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.player {
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  width: 45%;
 }
 
 button {
-    font-size: 18px;
-    margin-right: 10px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
