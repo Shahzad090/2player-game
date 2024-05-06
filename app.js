@@ -1,57 +1,44 @@
-let player1Score = 0;
-let player2Score = 0;
-let targetScore = 0;
+let target = 0;
+let score1 = 0;
+let score2 = 0;
 
-function rollDice(player) {
-  const diceValue = Math.floor(Math.random() * 6) ;
-  
-  if (player === 1) {
-    player1Score += diceValue;
-    document.getElementById('player1').innerHTML = `Player 1 Score: ${player1Score}`;
-  } else {
-    player2Score += diceValue;
-    document.getElementById('player2').innerHTML = `Player 2 Score: ${player2Score}`;
+function increaseScore(player) {
+  if (target === 0) {
+    alert("Please set target first!");
+    return;
   }
   
-  checkWinner();
+  if (player === 1) {
+    score1++;
+    document.getElementById("score1").innerText = score1;
+    if (score1 >= target) {
+      alert("Player 1 wins!");
+      resetGame();
+    }
+  } else {
+    score2++;
+    document.getElementById("score2").innerText = score2;
+    if (score2 >= target) {
+      alert("Player 2 wins!");
+      resetGame();
+    }
+  }
 }
 
 function setTarget() {
-  targetScore = document.getElementById('targetScore').value;
-  document.getElementById('targetScore').value = ''; // Clear input field
-}
-
-function checkWinner() {
-  if (player1Score >= targetScore) {
-    document.getElementById('winner').innerText = 'Player 1 wins!';
-    // disableButtons();
-  } else if (player2Score >= targetScore) {
-    document.getElementById('winner').innerText = 'Player 2 wins!';
-    // disableButtons();
+  target = parseInt(document.getElementById("targetInput").value);
+  if (isNaN(target) || target < 1) {
+    alert("Please enter a valid target!");
+    return;
   }
 }
 
 function resetGame() {
-  player1Score = 0;
-  player2Score = 0;
-  targetScore = 0;
-  document.getElementById('player1').innerHTML = `Player 1 Score: 0`;
-  document.getElementById('player2').innerHTML = `Player 2 Score: 0`;
-  document.getElementById('winner').innerText = '';
-  enableButtons();
+  target = 0;
+  score1 = 0;
+  score2 = 0;
+  document.getElementById("score1").innerText = score1;
+  document.getElementById("score2").innerText = score2;
+  document.getElementById("targetInput").value = "";
 }
-
-function disableButtons() {
-  document.querySelectorAll('button').forEach(btn => {
-    btn.disabled = true;
-  });
-}
-
-function enableButtons() {
-  document.querySelectorAll('button').forEach(btn => {
-    btn.disabled = false;
-  });
-}
-
-
 

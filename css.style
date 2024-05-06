@@ -1,40 +1,25 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.game {
+#container {
   width: 200px;
   height: 200px;
-  border: 2px solid #333;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  margin: auto;
+  text-align: center;
+  border: 100px;
+  color: black;
 }
 
-.player {
-  margin-bottom: 10px;
+#player1, #player2 {
+  display: inline-block;
+  margin: 10px;
 }
 
 button {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
 }
 
-button:hover {
-  background-color: #0056b3;
+#target {
+  margin-top: 30px;
 }
 
 
