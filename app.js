@@ -3,7 +3,7 @@ let player2Score = 0;
 let targetScore = 0;
 
 function rollDice(player) {
-  const diceValue = Math.floor(Math.random() * 6) + 1;
+  const diceValue = Math.floor(Math.random() * 6) ;
   
   if (player === 1) {
     player1Score += diceValue;
